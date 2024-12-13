@@ -1,14 +1,17 @@
 ---
+title: "Mein Titel"
+date: "2024-12-13"
+---
+
 interface Props {
-	title: string;
-	date: string;
-	excerpt: string;
-	image?: string;
-	href: string;
+    title: string;
+    date: string;
+    excerpt: string;
+    image?: string;
+    href: string;
 }
 
 const { title, date, excerpt, image, href } = Astro.props;
----
 
 <article class="blog-post">
 	{image && <img src={image} alt={title} class="blog-image" />}
