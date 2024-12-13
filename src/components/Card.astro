@@ -1,12 +1,15 @@
 ---
+title: "Mein Titel"
+date: "2024-12-13"
+---
+
 interface Props {
-	title: string;
-	body: string;
-	href: string;
+    title: string;
+    body: string;
+    href: string;
 }
 
 const { href, title, body } = Astro.props;
----
 
 <li class="link-card">
 	<a href={href}>
