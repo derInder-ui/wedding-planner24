@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Über uns - Traumhochzeit">
+	<main>
+		<section class="about-header">
+			<div class="container">
+				<h1>Über uns</h1>
+				<p>Ihre Begleiter auf dem Weg zur perfekten Hochzeit</p>
+			</div>
+		</section>
+
+		<section class="about-content">
+			<div class="container">
+				<div class="about-text">
+					<h2>Unsere Vision</h2>
+					<p>
+						Bei Traumhochzeit glauben wir daran, dass jede Hochzeit so einzigartig sein sollte 
+						wie das Paar selbst. Unsere Mission ist es, Ihnen mit wertvollen Tipps, 
+						Inspirationen und praktischen Ratschlägen zur Seite zu stehen.
+					</p>
+
+					<h2>Was uns ausmacht</h2>
+					<p>
+						Mit jahrelanger Erfahrung in der Hochzeitsbranche teilen wir unser Wissen, 
+						damit Sie Ihre Traumhochzeit perfekt planen können. Wir legen besonderen Wert auf:
+					</p>
+					<ul>
+						<li>Authentische und praktische Ratschläge</li>
+						<li>Aktuelle Trends und zeitlose Klassiker</li>
+						<li>Persönliche Erfahrungsberichte</li>
+						<li>Detaillierte Planungshilfen</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.about-header {
+		background-color: var(--color-secondary);
+		padding: 4rem 0;
+		text-align: center;
+	}
+
+	.container {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+
+	.about-content {
+		padding: 4rem 0;
+	}
+
+	.about-text {
+		line-height: 1.8;
+	}
+
+	.about-text h2 {
+		margin-top: 2rem;
+		color: var(--color-text);
+	}
+
+	.about-text p {
+		margin-bottom: 1.5rem;
+	}
+
+	.about-text ul {
+		list-style-position: inside;
+		margin-bottom: 2rem;
+	}
+
+	.about-text li {
+		margin-bottom: 0.5rem;
+	}
+
+	@media (max-width: 768px) {
+		.about-header {
+			padding: 2rem 0;
+		}
+
+		.about-content {
+			padding: 2rem 0;
+		}
+	}
+</style>

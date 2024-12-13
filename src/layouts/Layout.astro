@@ -1,0 +1,165 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Ihr Ratgeber für inspirierende Hochzeitsplanung" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<header class="main-header">
+			<nav>
+				<div class="logo">Traumhochzeit</div>
+				<button class="mobile-menu-toggle" aria-label="Menü öffnen">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<ul class="nav-links">
+					<li><a href="/">Startseite</a></li>
+					<li><a href="/blog">Blog</a></li>
+					<li><a href="/ueber-uns">Über uns</a></li>
+					<li><a href="/kontakt">Kontakt</a></li>
+				</ul>
+			</nav>
+		</header>
+		<slot />
+		<footer>
+			<div class="footer-content">
+				<p>&copy; 2024 Traumhochzeit. Alle Rechte vorbehalten.</p>
+			</div>
+		</footer>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--color-primary: #f8b7cd;
+		--color-secondary: #f5e6e8;
+		--color-text: #2c3e50;
+		--color-background: #ffffff;
+		--font-heading: 'Playfair Display', serif;
+		--font-body: 'Source Sans 3', sans-serif;
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		font-family: var(--font-body);
+		color: var(--color-text);
+		line-height: 1.6;
+		background-color: var(--color-background);
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: var(--font-heading);
+		margin-bottom: 1rem;
+	}
+
+	.main-header {
+		background-color: var(--color-background);
+		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		padding: 1rem;
+	}
+
+	nav {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.logo {
+		font-family: var(--font-heading);
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: var(--color-primary);
+	}
+
+	.nav-links {
+		display: flex;
+		list-style: none;
+		gap: 2rem;
+	}
+
+	.nav-links a {
+		text-decoration: none;
+		color: var(--color-text);
+		font-weight: 600;
+		transition: color 0.3s ease;
+	}
+
+	.nav-links a:hover {
+		color: var(--color-primary);
+	}
+
+	.mobile-menu-toggle {
+		display: none;
+	}
+
+	footer {
+		background-color: var(--color-secondary);
+		padding: 2rem;
+		margin-top: 4rem;
+		text-align: center;
+	}
+
+	@media (max-width: 768px) {
+		.mobile-menu-toggle {
+			display: block;
+			background: none;
+			border: none;
+			cursor: pointer;
+			padding: 0.5rem;
+		}
+
+		.mobile-menu-toggle span {
+			display: block;
+			width: 25px;
+			height: 3px;
+			background-color: var(--color-text);
+			margin: 5px 0;
+			transition: 0.3s;
+		}
+
+		.nav-links {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			background-color: var(--color-background);
+			flex-direction: column;
+			padding: 1rem;
+			text-align: center;
+		}
+
+		.nav-links.active {
+			display: flex;
+		}
+	}
+</style>
+
+<script>
+	document.querySelector('.mobile-menu-toggle')?.addEventListener('click', () => {
+		document.querySelector('.nav-links')?.classList.toggle('active');
+	});
+</script>

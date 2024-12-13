@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlogPost from '../components/BlogPost.astro';
+---
+
+<Layout title="Blog - Traumhochzeit">
+	<main>
+		<section class="blog-header">
+			<div class="container">
+				<h1>Unser Hochzeitsblog</h1>
+				<p>Inspiration und Ratschläge für Ihre perfekte Hochzeit</p>
+			</div>
+		</section>
+
+		<section class="blog-posts">
+			<div class="container">
+				<BlogPost
+					title="Die schönsten Hochzeitslokationen in Deutschland"
+					date="2024-04-15"
+					excerpt="Entdecken Sie bezaubernde Locations für Ihre Traumhochzeit - von romantischen Schlössern bis zu modernen Eventlocations."
+					href="/blog/hochzeitslokationen"
+					image="/images/venue.jpg"
+				/>
+				<BlogPost
+					title="Hochzeitsplanung: Der ultimative Zeitplan"
+					date="2024-04-10"
+					excerpt="Mit unserer Schritt-für-Schritt Anleitung behalten Sie alle wichtigen Aufgaben im Blick."
+					href="/blog/hochzeitsplanung-zeitplan"
+					image="/images/planning.jpg"
+				/>
+				<BlogPost
+					title="Trends für Brautkleider 2024"
+					date="2024-04-05"
+					excerpt="Die neuesten Trends und zeitlosen Klassiker für Ihren großen Auftritt."
+					href="/blog/brautkleider-trends"
+					image="/images/dress.jpg"
+				/>
+				<BlogPost
+					title="Die perfekte Hochzeitstorte"
+					date="2024-04-01"
+					excerpt="Von klassisch bis modern: Inspirationen für Ihre Traumtorte."
+					href="/blog/hochzeitstorte"
+					image="/images/cake.jpg"
+				/>
+				<BlogPost
+					title="Musik für Ihre Hochzeit"
+					date="2024-03-28"
+					excerpt="Die richtige Musikauswahl für jeden Moment Ihrer Feier."
+					href="/blog/hochzeitsmusik"
+					image="/images/music.jpg"
+				/>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.blog-header {
+		background-color: var(--color-secondary);
+		padding: 4rem 0;
+		text-align: center;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+
+	.blog-posts {
+		padding: 4rem 0;
+	}
+
+	.blog-posts .container {
+		display: grid;
+		gap: 2rem;
+	}
+
+	@media (max-width: 768px) {
+		.blog-header {
+			padding: 2rem 0;
+		}
+	}
+</style>
